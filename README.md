@@ -6,7 +6,7 @@ This software was developed by a Mechanical Engeneering student for a master the
 
 This software was developed for measuring micro flow rates using the Front Tracking priciple. REquires a camera and a trasnlucent capillary.
 
-Intructions:
+Intructions Tracker_v3.3:
 
 - Choose Live or Archieve mode
 - If Archieve mode was selected, choose the video file (Attention! requires video in .AVI or change the cript to accept other extensions)
