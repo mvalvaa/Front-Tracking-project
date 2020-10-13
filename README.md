@@ -4,7 +4,7 @@ NOVA School of Science and Thecnologies - NOVA FCT
 
 This software was developed by a Mechanical Engeneering student for a master thesis project.
 
-This software was developed for measuring micro flow rates using the Front Tracking priciple. REquires a camera and a trasnlucent capillary.
+This software was developed for measuring micro flow rates using the Front Tracking priciple. REquires a camera and a translucent capillary.
 
 Intructions Tracker_v3.3:
 
