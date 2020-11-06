@@ -1,3 +1,6 @@
+print('Instituto Português da Qualidade - IPQ \nNOVA School of Science and Thecnologies - NOVA FCT')
+print('Front Tracking (Alvium)')
+
 from pymba import Vimba
 from pymba import Frame
 import cv2
