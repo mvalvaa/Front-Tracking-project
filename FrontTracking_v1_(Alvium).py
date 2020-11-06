@@ -1,3 +1,6 @@
+print('Instituto Português da Qualidade - IPQ \nNOVA School of Science and Thecnologies - NOVA FCT')
+print('Front Tracking (Alvium)')
+
 from pymba import Vimba
 from pymba import Frame
 import cv2
@@ -6,10 +9,10 @@ import numpy as np
 
 ## user inputs
 #stop_image_processing = 16*3600*1
-total_time = int(5*60*60)    #total time (s)
-user_time_interval = 1    #time interval (s)
-inside_d = 1.15                #inside diameter (mm)
-outside_d = 1.6             #outside diameter (mm)
+total_time = int(2*3600)    #total time (s)
+user_time_interval = 30    #time interval (s)
+inside_d = 1.15               #inside diameter (mm)
+outside_d = 1.6            #outside diameter (mm)
 
 ## GLOBAL VARIABLES
 i = 0
@@ -49,6 +52,32 @@ def camera_setup():
         print('Acquisition mode: ', acquisition_mode.value)
 
         camera.close()
+
+def camera_view():
+    with Vimba() as vimba:
+        camera = vimba.camera(0)
+        camera.open()
+
+        camera.arm('SingleFrame')
+        fps = camera.feature('AcquisitionFrameRate')
+        fps = fps.value
+        print('FPS = ',fps)
+
+        while(True):
+            a = time.time()
+            frame = camera.acquire_frame()
+            image = frame.buffer_data_numpy()
+            image = cv2.resize(image,(1280,720))
+            cv2.imshow('Video', image)
+
+
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
+        camera.disarm()
+        camera.close()
+        cv2.destroyAllWindows()
+
 
 ##  SELECT SCALE
 def select_scale():
@@ -335,20 +364,23 @@ def main():
     
     while not end == True:
         
-        input_ = int(input('\nChoose task: '))
+        input_ = int(input('\nChoose task: \n\n-Camera Setup -> 1\n-Camera View -> 2\n-Select Scale -> 3\n-Select Threshold -> 4\n-Image Processing -> 5\n-Close -> 0\n\n Input: '))
         if input_ == 1:
             camera_setup()
             setup = True
-            
+
         if input_ == 2:
+            camera_view()
+            
+        if input_ == 3:
             select_scale()
             scale = True
             
-        if input_ == 3:
+        if input_ == 4:
             select_threshold()
             threshold = True
             
-        if input_ == 4:
+        if input_ == 5:
             if (setup == True) and (scale == True) and (threshold == True):
                 image_processing()
                 processing = True
