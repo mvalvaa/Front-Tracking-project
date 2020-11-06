@@ -8,7 +8,7 @@ This software was developed for measuring micro flow rates using the Front Track
 
 Two softwares were developed, one for the Levenhuk DT50 camera and one for the Alvium 1800U-1240 camera.
 
-Intructions Tracker_v3.3:
+Intructions FrontTracking_v3.3_Levenhuk:
 
 - Choose Live or Archieve mode
 - If Archieve mode was selected, choose the video file (Attention! requires video in .AVI or change the cript to accept other extensions)
@@ -22,13 +22,14 @@ Intructions Tracker_v3.3:
 - Press 'Print Results' to save results, generate a .txt file in diretory of script
 - Press Quit to close 
 
-Intructions Alvium_program_2409:
+Intructions FrontTracking_v1_(Alvium):
 
 - To change the following parameters: total time, usert time interval, capillary inside and outside diameter, change the values in the script code.
 - To setup the camera press '1'
-- To select scale value press '2'
-- To adjust threshold value (values between 45 and 80 were used, depends on light conditions) press "3"
-- To start mesurement, press '4' 
+- To view live form camera press '2'
+- To select scale value press '3'
+- To adjust threshold value (values between 45 and 80 were used, depends on light conditions) press '4'
+- To start mesurement, press '5' 
 - Press 'Ctrl C' to interrupt measurement
 - Press '0' to close
 
